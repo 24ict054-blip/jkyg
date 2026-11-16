@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive guide to the major internal systems of the F-35 Lightning II." />
+    <title>Inside the F-35 Lightning II</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="F-35 Inside home">
+          <span class="brand-mark">F<span>35</span></span>
+          <span class="brand-copy">SYSTEMS<br /><strong>ATLAS</strong></span>
+        </a>
+        <div class="topbar-note"><span class="status-dot"></span> PUBLIC OVERVIEW · 2026</div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-kicker">A systems-level field guide</div>
+          <h1>Inside the<br /><em>Lightning II</em></h1>
+          <p class="hero-lede">Explore the major systems that make the F-35 a flying sensor, computer, and weapon platform.</p>
+          <div class="hero-meta">
+            <span>01 — AIRFRAME</span>
+            <span>02 — AVIONICS</span>
+            <span>03 — PROPULSION</span>
+          </div>
+        </section>
+
+        <section class="explorer-section" id="explorer">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">01 / Component explorer</span>
+              <h2>Peel back the skin.</h2>
+            </div>
+            <p class="section-intro">Select a numbered hotspot to see what lives inside each zone. This is a simplified, public-facing systems map—not a maintenance diagram.</p>
+          </div>
+
+          <div class="explorer-layout">
+            <div class="aircraft-stage">
+              <div class="stage-label top">TOP VIEW <span>F-35A / NOT TO SCALE</span></div>
+              <div class="aircraft-wrap" aria-label="Interactive top-view illustration of an F-35 aircraft">
+                <svg class="aircraft" viewBox="0 0 760 470" role="img" aria-labelledby="aircraft-title">
+                  <title id="aircraft-title">Stylized top-view F-35 Lightning II with interactive system zones</title>
+                  <defs>
+                    <linearGradient id="skin" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stop-color="#637481" />
+                      <stop offset=".48" stop-color="#293943" />
+                      <stop offset="1" stop-color="#111b22" />
+                    </linearGradient>
+                    <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stop-color="#9fc5c9" stop-opacity=".85" />
+                      <stop offset="1" stop-color="#31515b" stop-opacity=".8" />
+                    </linearGradient>
+                    <filter id="shadow"><feDropShadow dx="0" dy="13" stdDeviation="10" flood-color="#081116" flood-opacity=".5" /></filter>
+                  </defs>
+                  <g class="aircraft-outline" filter="url(#shadow)">
+                    <path d="M383 22 C397 38 403 62 409 92 L434 175 639 224 646 240 434 254 401 430 383 450 365 430 332 254 114 240 121 224 332 175 357 92 C363 62 369 38 383 22Z" fill="url(#skin)" stroke="#82929b" stroke-width="2" />
+                    <path d="M363 94 L383 48 403 94 396 140 370 140Z" fill="url(#glass)" stroke="#b6d2d3" stroke-opacity=".35" />
+                    <path d="M368 153 L383 144 398 153 405 177 383 187 361 177Z" fill="#172930" stroke="#718691" stroke-width="2" />
+                    <path d="M353 190 L383 184 413 190 424 239 383 254 342 239Z" fill="#1e3037" stroke="#778891" stroke-width="1" />
+                    <path d="M327 194 L341 209 326 296 291 288Z M439 194 L425 209 440 296 475 288Z" fill="#17272e" stroke="#647984" stroke-width="1.5" />
+                    <path d="M333 301 L374 293 365 391 347 424 326 332Z M433 301 L392 293 401 391 419 424 440 332Z" fill="#263a42" stroke="#6c7f87" stroke-width="1.5" />
+                    <path d="M370 260 L396 260 400 339 383 412 366 339Z" fill="#20343b" stroke="#74858b" stroke-width="1.2" />
+                    <path d="M354 157 L351 232 M412 157 L415 232 M319 227 L449 227 M309 238 L457 238" stroke="#8fa2a9" stroke-opacity=".25" fill="none" />
+                    <path d="M371 92 L383 108 395 92 M360 167 L383 181 406 167" fill="none" stroke="#bbd0d1" stroke-opacity=".3" stroke-width="1.5" />
+                  </g>
+                </svg>
+                <div class="hotspots" aria-label="Clickable aircraft components">
+                  <button class="hotspot active" data-zone="cockpit" style="--x: 50%; --y: 25%" aria-label="Cockpit and mission computer">01</button>
+                  <button class="hotspot" data-zone="engine" style="--x: 50%; --y: 66%" aria-label="F135 engine">02</button>
+                  <button class="hotspot" data-zone="weapons" style="--x: 66%; --y: 48%" aria-label="Internal weapons bays">03</button>
+                  <button class="hotspot" data-zone="sensors" style="--x: 32%; --y: 44%" aria-label="Distributed sensors">04</button>
+                  <button class="hotspot" data-zone="fuel" style="--x: 50%; --y: 47%" aria-label="Fuel and thermal management">05</button>
+                  <button class="hotspot" data-zone="structure" style="--x: 80%; --y: 42%" aria-label="Low observable structure">06</button>
+                </div>
+              </div>
+              <div class="stage-label bottom">CLICK A HOTSPOT <span>TO INSPECT A SYSTEM</span></div>
+            </div>
+
+            <aside class="component-card" aria-live="polite">
+              <div class="card-topline"><span id="component-number">01</span><span id="component-type">FLIGHT DECK</span></div>
+              <div class="card-icon" id="component-icon">◈</div>
+              <h3 id="component-title">Cockpit &amp;<br />mission computer</h3>
+              <p id="component-description">The F-35’s cockpit is built around a panoramic display and a mission computer that fuses data from the jet’s own sensors and external sources into one tactical picture.</p>
+              <div class="fact-list" id="fact-list"></div>
+              <div class="card-footer"><span id="component-tag">CORE SYSTEM</span><span class="arrow">↗</span></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="systems-section">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">02 / Systems, simplified</span>
+              <h2>One aircraft.<br /><span>Many layers.</span></h2>
+            </div>
+            <p class="section-intro">The F-35 is less a collection of separate boxes than a tightly integrated network. Each layer feeds the next.</p>
+          </div>
+          <div class="system-grid">
+            <article class="system-tile"><span class="tile-number">01</span><div class="tile-icon">⌁</div><h3>See</h3><p>Radar, electro-optical cameras, electronic support sensors, and the helmet-mounted display extend the pilot’s view.</p><span class="tile-link">SENSORS <b>↗</b></span></article>
+            <article class="system-tile featured"><span class="tile-number">02</span><div class="tile-icon">◎</div><h3>Think</h3><p>Mission systems combine raw inputs into a single track picture, reducing the pilot’s workload in complex airspace.</p><span class="tile-link">DATA FUSION <b>↗</b></span></article>
+            <article class="system-tile"><span class="tile-number">03</span><div class="tile-icon">△</div><h3>Act</h3><p>Low-observable shaping, internal carriage, and the F135 engine support speed, reach, and flexible mission profiles.</p><span class="tile-link">PERFORMANCE <b>↗</b></span></article>
+          </div>
+        </section>
+
+        <section class="spec-strip">
+          <div><span>CREW</span><strong>1</strong><small>pilot</small></div>
+          <div><span>POWERPLANT</span><strong>F135</strong><small>afterburning turbofan</small></div>
+          <div><span>ROLE</span><strong>5<sup>th</sup></strong><small>generation multirole</small></div>
+          <div><span>VARIANTS</span><strong>A · B · C</strong><small>three operating concepts</small></div>
+        </section>
+      </main>
+
+      <footer>
+        <span>F-35 SYSTEMS ATLAS</span>
+        <span>Public information · educational use</span>
+        <span>Scroll to explore ↑</span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
